@@ -9,8 +9,7 @@ git remote set-url origin <your-own-remote>
 git push -u origin main
 ```
 
- `data/`、`raw_weights/` 等大文件目录可以替换为软链接，填充自己的模型、数据集、训练器代码即可开始实验。当前的代码均为空的占位
-请在开始实验后更新此readme文档
+ `data/`、`raw_weights/` 等大文件目录可以替换为软链接，`ref/` 中放入参考论文与代码，填充自己的模型、数据集、训练器代码即可开始实验。当前各目录代码均为空的占位，请在开始实验后更新此 README 文档
 ---
 
 ## 目录结构
@@ -55,7 +54,7 @@ git push -u origin main
 # ├── raw_weights/                                   # 预训练权重，建议用软链接
 # │   └── this_folder_can_be_a_link
 # ├── ref/                                           # 外部参考资料
-# │   ├── code/                                      #   参考代码
+# │   ├── repo/                                      #   参考代码仓库
 # │   └── paper/                                     #   参考论文
 # ├── src/                                           # 所有源代码
 # │   ├── datasets/                                  #   数据集模块
