@@ -3,7 +3,7 @@
 本仓库是一个**实验项目骨架**，意在提供标准化的目录结构、代码组织方式和实验运行规范。使用方式：
 
 ```bash
-git clone <this-repo> exp_prototype
+git clone https://github.com/MOYF-beta/exp_prototype.git exp_prototype
 cd exp_prototype
 git remote set-url origin <your-own-remote>
 git push -u origin main
