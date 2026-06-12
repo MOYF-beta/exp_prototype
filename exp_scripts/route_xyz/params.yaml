@@ -1,0 +1,49 @@
+# base configuration
+exp_name: route_xyz
+dataset: ./data/some_dataset
+seed: 1145141919
+GPU: [0, 1, 2, 3]
+
+# dataset settings
+dataset:
+  root: ./data/some_dataset
+  # augmentation, sampling ratio, resolution, split, etc.
+
+# model settings
+model:
+  path: ./model/pretrained_model_xxx.pth
+  # architecture details, etc.
+
+# epoch schedule
+epochs: 50
+eval_frequency: 5
+save_frequency: 10
+only_keep_latest_optimizer: true
+eval_before_training: true
+
+# per-part schedule & hyper-parameters
+parts:
+  head_xx:
+    freeze_epochs: 0
+    warmup_epochs: 0
+    lr: 0.001
+  part_yy:
+    freeze_epochs: 10
+    warmup_epochs: 5
+    lr: 0.0005
+  body_zz:
+    freeze_epochs: 20
+    warmup_epochs: 10
+    lr: 0.0001
+
+# optimizer settings
+optimizer:
+  batch_size: 32
+  # type, weight_decay, scheduler, etc.
+
+# loss settings
+loss:
+  # type, weights, etc.
+
+# other tricks & parameters which vary for different experiments
+...
