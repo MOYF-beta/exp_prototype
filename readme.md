@@ -96,6 +96,7 @@ git push -u origin main
 - **一路线一目录**：每条实验路线映射为一个 `route_xxx/`，建议按逻辑维度命名区分，例如按模型架构（`route_resnet` / `route_vit`）、技术路线（`route_baseline` / `route_finetune`）、或消融变量（`route_ablation_loss`）等，避免参数混入命令行脚本造成不可追溯
 - **声明式配置**：`params.yaml` 承载所有可变参数（数据、模型、超参、分阶段调度），不在代码中硬编码
 - **启动脚本极简化**：`launch.py` 只做三件事 — 转储本次运行的实际参数（`run_param.yaml`）→ 记录当前 git 状态（`git_status/`）→ 调用 trainer 并将 stdout/stderr 重定向到日志文件。训练过程的日志输出由 trainer 自身负责
+  - **⚠️ 必须使用 `subprocess.run` 调用训练入口**，不要直接 `import` 后调用 trainer 方法。只有通过子进程运行，才能正确捕获 stdout/stderr 并重定向到日志文件，同时也避免子进程的异常污染主进程
 
 ### 参数配置（`params.yaml`）
 
